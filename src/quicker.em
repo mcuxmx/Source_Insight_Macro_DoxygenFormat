@@ -2548,7 +2548,7 @@ macro GetFunctionDef(hbuf,symbol)
 		szLine = RetVal.szContent
 		szLine = TrimString(szLine)
 		fIsEnd = RetVal.fIsEnd
-        //如果是{表示函数参数头结束了
+        //如果是'{'表示函数参数头结束了
         ret = strstr(szLine,"{")        
         if(ret != 0xffffffff)
         {
@@ -3487,7 +3487,7 @@ macro GetWordLeftOfIch(ich, sz)
              &&  (ch != "#") )
             break // stop at first non-identifier character
 */
-        //只提取字符和# { / *作为命令
+        //只提取字符和'#' '{' '/' '*'作为命令
         if ((asciiCh < asciiA || asciiCh > asciiZ) 
            && !IsNumber(ch)
            && ( ch != "#" && ch != "{" && ch != "/" && ch != "*"))
